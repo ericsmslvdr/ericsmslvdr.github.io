@@ -17,6 +17,7 @@ const Projects = () => {
                     <div className="w-2/5 h-auto">
                         <a
                             href="https://davao.primephilippines.com/"
+                            target='_blank'
                             className="text-light hover:text-link">
                             Davao Prime Philippines
                         </a>
@@ -36,6 +37,7 @@ const Projects = () => {
                     <div className="w-2/5 h-auto">
                         <a
                             href="https://offices.primephilippines.com/"
+                            target='_blank'
                             className="text-light hover:text-link">
                             Offices Prime Philippines
                         </a>
@@ -55,6 +57,7 @@ const Projects = () => {
                     <div className="w-2/5 h-auto">
                         <a
                             href="https://commercialproperties.primephilippines.com/"
+                            target='_blank'
                             className="text-light hover:text-link">
                             Commercial Properties Prime Philippines
                         </a>
@@ -74,6 +77,7 @@ const Projects = () => {
                     <div className="w-2/5 h-auto">
                         <a
                             href="https://research.primephilippines.com/"
+                            target='_blank'
                             className="text-light hover:text-link">
                             Research Prime Philippines
                         </a>
