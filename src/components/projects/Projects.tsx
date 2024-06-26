@@ -2,6 +2,8 @@ import davaoDemo from '@videos/davao.webm';
 import officesDemo from '@videos/offices.webm';
 import commercialDemo from '@videos/commercial.webm';
 import research from '@images/research.webp';
+import gwCMSDemo from '@videos/gw-cms.webm';
+import gwDemo from '@videos/gw.webm';
 
 const Projects = () => {
     return (
@@ -33,7 +35,7 @@ const Projects = () => {
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
-                            href="https://davao.primephilippines.com/"
+                            href="https://offices.primephilippines.com/"
                             className="text-light hover:text-link">
                             Offices Prime Philippines
                         </a>
@@ -52,7 +54,7 @@ const Projects = () => {
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
-                            href="https://davao.primephilippines.com/"
+                            href="https://commercialproperties.primephilippines.com/"
                             className="text-light hover:text-link">
                             Commercial Properties Prime Philippines
                         </a>
@@ -71,7 +73,7 @@ const Projects = () => {
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
-                            href="https://davao.primephilippines.com/"
+                            href="https://research.primephilippines.com/"
                             className="text-light hover:text-link">
                             Research Prime Philippines
                         </a>
@@ -86,11 +88,11 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex gap-4">
                     <div className="w-3/5">
-                        <video src={davaoDemo} autoPlay loop></video>
+                        <video src={gwDemo} autoPlay loop></video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
-                            href="https://davao.primephilippines.com/"
+                            href="#"
                             className="text-light hover:text-link">
                             GreatWork Global
                         </a>
@@ -105,26 +107,29 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex flex-row-reverse gap-4">
                     <div className="w-3/5">
-                        <video src={davaoDemo} autoPlay loop></video>
+                        <video src={gwCMSDemo} autoPlay loop></video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
-                            href="https://davao.primephilippines.com/"
+                            href="#"
                             className="text-light hover:text-link">
                             GreatWork Global CMS
                         </a>
                         <p className="my-4 text-gray text-sm">The content management system for GreatWork Global streamlines the management and customization on their workspace offerings for their website, ensuring efficient service delivery and user experience.</p>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
                             <div className="text-blue-400 border border-blue-400 rounded-lg px-2">React</div>
                             <div className="text-green-400 border border-green-400 rounded-lg px-2">Axios</div>
-                            <div className="text-red-400 border border-red-400 rounded-lg px-2">Redux</div>
+                            <div className="text-lime-400 border border-lime-400 rounded-lg px-2">NodeJS</div>
+                            <div className="text-slate-400 border border-slate-400 rounded-lg px-2">Express</div>
+                            <div className="text-indigo-400 border border-indigo-400 rounded-lg px-2">Prisma ORM</div>
+                            <div className="text-sky-400 border border-sky-400 rounded-lg px-2">MySQL</div>
                             <div className="text-pink-400 border border-pink-400 rounded-lg px-2">SASS</div>
                         </div>
                     </div>
                 </div>
                 <div className="h-auto w-full flex gap-4">
                     <div className="w-3/5">
-                        <video src={davaoDemo} autoPlay loop></video>
+                        <img src="" alt="" />
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -159,11 +164,11 @@ const Projects = () => {
                                 Export reports in Excel and PDF formats.
                             </li>
                         </ul>
-                        <div className="flex items-center gap-2">
-                            <div className="text-blue-400 border border-blue-400 rounded-lg px-2">React</div>
-                            <div className="text-green-400 border border-green-400 rounded-lg px-2">Axios</div>
-                            <div className="text-red-400 border border-red-400 rounded-lg px-2">Redux</div>
-                            <div className="text-pink-400 border border-pink-400 rounded-lg px-2">SASS</div>
+                        <div className="flex flex-wrap items-center gap-2">
+                            <div className="text-indigo-400 border border-indigo-400 rounded-lg px-2">FlutterFlow</div>
+                            <div className="text-amber-400 border border-amber-400 rounded-lg px-2">Firebase</div>
+                            <div className="text-violet-400 border border-violet-400 rounded-lg px-2">Syncfusion</div>
+                            <div className="text-rose-400 border border-rose-400 rounded-lg px-2">CraftMyPDF</div>
                         </div>
                     </div>
                 </div>

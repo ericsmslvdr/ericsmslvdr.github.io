@@ -7,11 +7,11 @@ const Hero = () => {
     return (
         <section className="flex justify-between items-center max-w-container mx-auto my-28 gap-7" id="home">
             <figure className="min-w-48 h-48 rounded-full border-4 border-solid border-sky-500 overflow-hidden">
-                {/* <img
+                <img
                     src={profileImage}
                     alt="Profile Image"
                     className='w-full h-full object-cover object-[center_30%]'
-                /> */}
+                />
             </figure>
             <article className="text-4xl leading-normal text-light">
                 <h2>Hey, I'm Eric.
