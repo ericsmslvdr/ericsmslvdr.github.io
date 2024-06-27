@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "https://ericsmslvdr.github.io/my-website/",
+  base: "/",
   plugins: [react()],
   assetsInclude: ['**/*.svg'],
   resolve: {
