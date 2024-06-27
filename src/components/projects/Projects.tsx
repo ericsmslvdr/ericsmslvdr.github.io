@@ -4,6 +4,7 @@ import commercialDemo from '@videos/commercial.webm';
 import research from '@images/research.webp';
 import gwCMSDemo from '@videos/gw-cms.webm';
 import gwDemo from '@videos/gw.webm';
+import pattrackDemo from '@videos/pattrack.mp4'
 
 const Projects = () => {
     return (
@@ -12,7 +13,9 @@ const Projects = () => {
             <main className="flex flex-col gap-10 mt-6">
                 <div className="h-auto w-full flex gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <video src={davaoDemo} autoPlay loop></video>
+                        <video autoPlay={true} loop muted>
+                            <source src={davaoDemo} type='video/webm' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -42,7 +45,9 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex flex-row-reverse gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <video src={officesDemo} autoPlay loop></video>
+                        <video autoPlay={true} loop muted>
+                            <source src={officesDemo} type='video/webm' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -70,7 +75,9 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <video src={commercialDemo} autoPlay loop></video>
+                        <video autoPlay={true} loop muted>
+                            <source src={commercialDemo} type='video/webm' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -128,7 +135,9 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <video src={gwDemo} autoPlay loop></video>
+                        <video autoPlay={true} loop muted>
+                            <source src={gwDemo} type='video/webm' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -148,7 +157,9 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex flex-row-reverse gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <video src={gwCMSDemo} autoPlay loop></video>
+                        <video autoPlay={true} loop muted>
+                            <source src={gwCMSDemo} type='video/webm' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
@@ -172,7 +183,9 @@ const Projects = () => {
                 </div>
                 <div className="h-auto w-full flex gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950">
                     <div className="w-3/5">
-                        <img src="" alt="" />
+                        <video autoPlay={true} loop muted>
+                            <source src={pattrackDemo} type='video/mp4' />
+                        </video>
                     </div>
                     <div className="w-2/5 h-auto">
                         <a
