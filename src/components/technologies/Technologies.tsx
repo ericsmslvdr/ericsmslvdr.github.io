@@ -42,6 +42,10 @@ const Technologies = () => {
             "icon": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" className="h-6 w-6" />,
             "name": "Flutter"
         },
+        {
+            "icon": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" className="h-6 w-6" />,
+            "name": "Postman"
+        },
     ]
 
     return (
