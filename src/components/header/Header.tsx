@@ -11,7 +11,7 @@ const Header = () => {
                         &#47;&gt;
                     </a >
                 </div >
-                <nav>
+                <nav aria-label="Main Navigation">
                     <NavItems />
                 </nav>
             </div>
@@ -25,10 +25,10 @@ const NavItems = () => {
 
     return (
         <ul className='flex gap-4 text-gray'>
-            <li><a href="#home" className='hover:text-link'>Home</a></li>
-            <li><a href="#skills" className='hover:text-link'>Skills</a></li>
-            <li><a href="#projects" className='hover:text-link'>Projects</a></li>
-            <li><a href="#contacts" className='hover:text-link'>Contact Me</a></li>
+            <li><a href="#home" className='hover:text-link' aria-label="Navigate to Home section">Home</a></li>
+            <li><a href="#skills" className='hover:text-link' aria-label="Navigate to Skills section">Skills</a></li>
+            <li><a href="#projects" className='hover:text-link' aria-label="Navigate to Projects section">Projects</a></li>
+            <li><a href="#contacts" className='hover:text-link' aria-label="Navigate to Contact Me section">Contact Me</a></li>
         </ul>
     )
 }
