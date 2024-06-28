@@ -14,9 +14,9 @@ const Header = () => {
 
     return (
         <MenuContext.Provider value={{ showMenu, toggleMenu }}>
-            <header className='fixed z-10 top-0 left-0 right-0 bg-dark w-full py-6 px-8 shadow-lg border border-green-300' >
-                <div className="flex justify-between items-center max-w-container min-w-[40px] mx-auto border border-red-500">
-                    <a href="#home" className="text-gray hover:text-link border border-orange-400">
+            <header className='fixed z-10 top-0 left-0 right-0 bg-dark w-full py-6 px-8 shadow-lg' >
+                <div className="flex justify-between items-center max-w-container min-w-[40px] mx-auto">
+                    <a href="#home" className="text-gray hover:text-link">
                         &lt;
                         <span className='text-gray'>ericsmslvdr </span>
                         &#47;&gt;
@@ -87,7 +87,7 @@ const MenuIcon = () => {
     )
 
     return (
-        <div className="md:hidden border border-blue-300">
+        <div className="md:hidden">
             {menuIcon}
         </div>
     )
