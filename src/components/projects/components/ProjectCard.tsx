@@ -69,6 +69,21 @@ const ProjectCardDemo = () => {
 const ProjectCardContent = () => {
     const { projectCard } = useProjectCardContext()
 
+    const colors: { [key: string]: string } = {
+        blue: 'text-blue-400 border-blue-400',
+        green: 'text-green-400 border-green-400',
+        red: 'text-red-400 border-red-400',
+        pink: 'text-pink-400 border-pink-400',
+        lime: 'text-lime-400 border-lime-400',
+        cyan: 'text-cyan-400 border-cyan-400',
+        slate: 'text-slate-400 border-slate-400',
+        indigo: 'text-indigo-400 border-indigo-400',
+        sky: 'text-sky-400 border-sky-400',
+        amber: 'text-amber-400 border-amber-400',
+        violet: 'text-violet-400 border-violet-400',
+        rose: 'text-rose-400 border-rose-400',
+    }
+
     return (
         <div className="w-2/5 h-auto">
             <a
@@ -103,11 +118,14 @@ const ProjectCardContent = () => {
                 </ul>
             )}
             <div className="flex flex-wrap items-center gap-2">
-                {projectCard.techStack.map((tech, index) => (
-                    <div key={index} className={`text-xs text-${tech.color}-400 border border-${tech.color}-400 rounded-lg px-2`}>
+                {projectCard.techStack.map((tech, index) => {
+                    const textAndBorderColor = colors[tech.color]
+                    const className = `text-xs border ${textAndBorderColor} rounded-lg px-2`
+
+                    return <div key={index} className={className}>
                         {tech.name}
                     </div>
-                ))}
+                })}
             </div>
         </div>
     )
