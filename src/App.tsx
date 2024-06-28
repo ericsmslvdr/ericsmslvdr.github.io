@@ -10,10 +10,12 @@ function App() {
   return (
     <div className="bg-dark">
       <Header />
-      <Hero />
-      <Technologies />
-      <Projects />
-      <ContactMe />
+      <main>
+        <Hero />
+        <Technologies />
+        <Projects />
+        <ContactMe />
+      </main>
       <Footer />
     </div>
   )

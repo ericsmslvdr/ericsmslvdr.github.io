@@ -6,7 +6,7 @@ const Hero = () => {
             <figure className="min-w-48 h-48 rounded-full border-4 border-solid border-sky-500 overflow-hidden">
                 <img
                     src={profileImage}
-                    alt="Profile Image"
+                    alt="Eric Samuel Salvador's profile picture"
                     className='w-full h-full object-cover object-[center_30%]'
                 />
             </figure>
@@ -18,9 +18,11 @@ const Hero = () => {
                     <a
                         href="https://www.facebook.com/ericsmslvdr"
                         target='_blank'
+                        rel="noopener noreferrer"
                         className='flex justify-center items-center gap-2 text-base text-[#0866ff]'
+                        aria-label="Eric's Facebook profile"
                     >
-                        <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" className="h-6 w-6" alt="" />
+                        <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" className="h-6 w-6" alt="Facebook icon" />
                         <span className='text-gray text-sm hover:text-[#0866ff]'>
                             Facebook
                         </span>
@@ -28,9 +30,11 @@ const Hero = () => {
                     <a
                         href="https://github.com/ericsmslvdr"
                         target='_blank'
+                        rel="noopener noreferrer"
                         className='flex justify-center items-center gap-2 text-base text-[#d4d4d4]'
+                        aria-label="Eric's Github profile"
                     >
-                        <img src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000" className="h-6 w-6" alt="" />
+                        <img src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000" className="h-6 w-6" alt="Github icon" />
                         <span className='text-gray text-sm hover:text-[#d4d4d4]'>
                             Github
                         </span>
@@ -38,9 +42,11 @@ const Hero = () => {
                     <a
                         href="https://www.linkedin.com/in/ericsmsalvador/"
                         target='_blank'
+                        rel="noopener noreferrer"
+                        aria-label="Eric's LinkedIn profile"
                         className='flex justify-center items-center gap-2 text-base text-[#71b7fb]'
                     >
-                        <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" className="h-6 w-6" alt="" />
+                        <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" className="h-6 w-6" alt="LinkedIn icon" />
                         <span className='text-gray text-sm hover:text-[#71b7fb]'>
                             LinkedIn
                         </span>
