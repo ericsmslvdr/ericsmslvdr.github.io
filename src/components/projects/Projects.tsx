@@ -122,7 +122,7 @@ const Projects = () => {
             demoAlt: 'Pattrack Mobile App Demo',
             source: pattrackDemo,
             isReversed: false,
-            title: 'Pattrack Mobile Appasdasads',
+            title: 'Pattrack Mobile App',
             link: '',
             typeOfProject: 'Capstone Project',
             projectDescription: "A Patient Tracker System for Rural Health Units (RHUs) with SMS Notification",
