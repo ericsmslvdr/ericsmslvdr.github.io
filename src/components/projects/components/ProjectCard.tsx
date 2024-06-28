@@ -104,7 +104,7 @@ const ProjectCardContent = () => {
             )}
             <div className="flex flex-wrap items-center gap-2">
                 {projectCard.techStack.map((tech, index) => (
-                    <div key={index} className={`text-xs border rounded-lg px-2 text-${tech.color} border-${tech.color}`}>
+                    <div key={index} className={`text-xs text-${tech.color}-400 border border-${tech.color}-400 rounded-lg px-2`}>
                         {tech.name}
                     </div>
                 ))}

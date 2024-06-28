@@ -21,10 +21,10 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "Showcases PRIME Philippines' real estate services and property listings in Davao.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'Redux', color: 'red-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'Redux', color: 'red' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -38,10 +38,10 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "Focuses on available office spaces for lease or sale managed by PRIME Philippines.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'Redux', color: 'red-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'Redux', color: 'red' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -55,10 +55,10 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "Highlights commercial real estate offerings such as retail, industrial, and warehouse spaces.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'Redux', color: 'red-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'Redux', color: 'red' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -72,10 +72,10 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "Provides market research, reports, and insights into the real estate market for investors and businesses.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'Redux', color: 'red-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'Redux', color: 'red' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -89,10 +89,10 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "GreatWork Global provides modern, tech-powered workspaces, including serviced offices, co-working spaces, virtual offices, and meeting rooms, designed for productivity and a healthy work-life balance.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'Redux', color: 'red-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'Redux', color: 'red' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -106,14 +106,14 @@ const Projects = () => {
             typeOfProject: 'Internship Project',
             projectDescription: "The content management system for GreatWork Global streamlines the management and customization on their workspace offerings for their website, ensuring efficient service delivery and user experience.",
             techStack: [
-                { name: 'React', color: 'blue-400' },
-                { name: 'Axios', color: 'green-400' },
-                { name: 'NodeJS', color: 'lime-400' },
-                { name: 'Typescript', color: 'cyan-400' },
-                { name: 'Express', color: 'slate-400' },
-                { name: 'Prisma ORM', color: 'indigo-400' },
-                { name: 'MySQL', color: 'sky-400' },
-                { name: 'SASS', color: 'pink-400' },
+                { name: 'React', color: 'blue' },
+                { name: 'Axios', color: 'green' },
+                { name: 'NodeJS', color: 'lime' },
+                { name: 'Typescript', color: 'cyan' },
+                { name: 'Express', color: 'slate' },
+                { name: 'Prisma ORM', color: 'indigo' },
+                { name: 'MySQL', color: 'sky' },
+                { name: 'SASS', color: 'pink' },
             ]
         },
         {
@@ -153,10 +153,10 @@ const Projects = () => {
                 }
             ],
             techStack: [
-                { name: 'FlutterFlow', color: 'indigo-400' },
-                { name: 'Firebase', color: 'amber-400' },
-                { name: 'Syncfusion', color: 'violet-400' },
-                { name: 'CraftMyPDF', color: 'rose-400' },
+                { name: 'FlutterFlow', color: 'indigo' },
+                { name: 'Firebase', color: 'amber' },
+                { name: 'Syncfusion', color: 'violet' },
+                { name: 'CraftMyPDF', color: 'rose' },
             ]
         },
     ]
