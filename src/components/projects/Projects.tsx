@@ -162,7 +162,7 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="flex flex-col max-w-container mx-auto mt-16">
+        <section id="projects" className="flex flex-col max-w-container mx-auto mt-16 px-9 md:px-0">
             <h1 className='text-xl text-light'>#Projects</h1>
             <div className="flex flex-col gap-10 mt-6">
                 {projects.map((project, index) => (

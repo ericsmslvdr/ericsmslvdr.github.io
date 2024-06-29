@@ -2,19 +2,19 @@ import profileImage from '@images/me.webp';
 
 const Hero = () => {
     return (
-        <section className="flex justify-between items-center max-w-container mx-auto pt-44 pb-32 gap-7" id="home">
-            <figure className="min-w-48 h-48 rounded-full border-4 border-solid border-sky-500 overflow-hidden">
+        <section className="flex flex-col justify-between items-center max-w-container mx-auto pt-44 pb-32 gap-7 md:flex-row" id="home">
+            <figure className="w-48 h-48 md:min-w-48 rounded-full border-4 border-solid border-sky-500 overflow-hidden">
                 <img
                     src={profileImage}
                     alt="Eric Samuel Salvador's profile picture"
                     className='w-full h-full object-cover object-[center_30%]'
                 />
             </figure>
-            <article className="text-4xl leading-normal text-light">
+            <article className="text-2xl px-8 text-center leading-normal text-light md:text-4xl md:text-left md:px-0">
                 <h2>Hey, I'm Eric.
                     <span className='text-gray'> I'm a front-end and backend web developer.</span>
                 </h2>
-                <nav className="flex justify-start items-center gap-6 mt-4">
+                <nav className="flex flex-wrap justify-center items-center gap-6 mt-4 md:justify-start">
                     <a
                         href="https://www.facebook.com/ericsmslvdr"
                         target='_blank'

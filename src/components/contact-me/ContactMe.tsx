@@ -33,11 +33,11 @@ const ContactMe = () => {
     }
 
     return (
-        <section id="contacts" className="flex flex-col max-w-container mx-auto mt-16">
+        <section id="contacts" className="flex flex-col max-w-container mx-auto mt-16 px-8 md:px-0">
             <h1 className='text-xl text-light'>#Contact Me</h1>
-            <main className="flex gap-8 mt-6">
-                <form onSubmit={handleSubmit} className="border border-neutral-700 rounded-lg p-4 w-2/3">
-                    <div className="flex justify-between items-center gap-4">
+            <main className="flex flex-col md:flex-row gap-8 mt-6">
+                <form onSubmit={handleSubmit} className="border border-neutral-700 rounded-lg p-4 w-full md:w-2/3">
+                    <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name" className="text-gray">Name:</label>
                             <input
@@ -76,13 +76,13 @@ const ContactMe = () => {
                         ></textarea>
                     </div>
                     <div className="flex justify-end mt-4">
-                        <button className="flex items-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700">
+                        <button className="flex w-full md:w-fit items-center justify-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700">
                             Send
                             <img src="https://img.icons8.com/?size=100&id=40007&format=png&color=000000" className="h-4 w-4" alt="" />
                         </button>
                     </div>
                 </form>
-                <div className="flex flex-col w-1/3">
+                <div className="flex flex-col w-full md:w-1/3">
                     <h2 className="text-light">Or get in touch with me through...</h2>
                     <div className="mt-6 flex flex-col gap-4">
                         <a href="mailto:ericsmsalvador@gmail.com" target="_blank">

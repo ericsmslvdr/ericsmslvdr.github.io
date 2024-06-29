@@ -3,10 +3,10 @@ const Footer = () => {
 
     return (
         <footer className='bg-dark text-gray w-full py-6 shadow-lg mt-40 pb-10' >
-            <div className="flex justify-between items-center max-w-container mx-auto">
-                <div>
+            <div className="flex flex-col md:flex-row gap-8 text-center md:text-start justify-between items-center max-w-container mx-auto px-8 md:px-0">
+                <div className="text-center md:text-start">
                     <p>&copy; {new Date().getFullYear()} Eric Samuel Salvador</p>
-                    <p className="flex items-center">
+                    <p className="flex items-center justify-center flex-wrap pt-4 md:pt-0">
                         Created with
                         <span role="img" className="px-1" aria-label="heart">❤️</span>
                         and

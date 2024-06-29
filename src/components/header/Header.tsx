@@ -63,8 +63,8 @@ const MenuIcon = () => {
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="40"
-            height="40"
+            width="28"
+            height="28"
             viewBox="0 0 24 24"
             style={{ fill: "#a8adb2" }}
             onClick={toggleMenu}
@@ -76,8 +76,8 @@ const MenuIcon = () => {
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="40"
-            height="40"
+            width="28"
+            height="28"
             viewBox="0 0 64 64"
             style={{ fill: "#a8adb2" }}
             onClick={toggleMenu}

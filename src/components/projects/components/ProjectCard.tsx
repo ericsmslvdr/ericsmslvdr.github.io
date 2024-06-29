@@ -42,7 +42,7 @@ const ProjectCard = ({ children, projectCard }: ProjectCardProps) => {
 
     return (
         <ProjectCardContext.Provider value={{ projectCard }} >
-            <div className={`h-auto w-full flex ${projectCard.isReversed ? 'flex-row-reverse' : ''} gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950`}>
+            <div className={`h-auto w-full flex flex-col md:flex-row ${projectCard.isReversed ? 'flex-row-reverse' : ''} gap-4 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-950`}>
                 {children}
             </div>
         </ProjectCardContext.Provider>
@@ -55,7 +55,7 @@ const ProjectCardDemo = () => {
     const { projectCard } = useProjectCardContext()
 
     return (
-        <div className="w-3/5">
+        <div className="w-full md:w-3/5">
             {projectCard.demoType === 'video'
                 ? <video autoPlay={true} loop muted>
                     <source src={projectCard.source} type={projectCard.demoSourceType} />
@@ -85,7 +85,7 @@ const ProjectCardContent = () => {
     }
 
     return (
-        <div className="w-2/5 h-auto">
+        <div className="w-full md:w-2/5 h-auto">
             <a
                 href={projectCard.link}
                 target='_blank'
