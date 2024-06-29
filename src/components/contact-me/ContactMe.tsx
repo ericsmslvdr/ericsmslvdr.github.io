@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import MenuContext from "../../contexts/MenuContext";
 
 type FormDataType = {
     name: string;
@@ -7,6 +8,8 @@ type FormDataType = {
 }
 
 const ContactMe = () => {
+    const { contactMeRef } = useContext(MenuContext);
+
     const [formData, setFormData] = useState<FormDataType>({
         name: '',
         email: '',
@@ -33,7 +36,7 @@ const ContactMe = () => {
     }
 
     return (
-        <section id="contacts" className="flex flex-col max-w-container mx-auto mt-16 px-8 md:px-0">
+        <section ref={contactMeRef} className="flex flex-col max-w-container mx-auto mt-16 px-8 md:px-0">
             <h1 className='text-xl text-light'>#Contact Me</h1>
             <main className="flex flex-col md:flex-row gap-8 mt-6">
                 <form onSubmit={handleSubmit} className="border border-neutral-700 rounded-lg p-4 w-full md:w-2/3">

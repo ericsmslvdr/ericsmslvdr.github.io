@@ -1,56 +1,51 @@
-import { createContext, useContext, useState } from "react";
-
-const MenuContext = createContext({
-    showMenu: false,
-    toggleMenu: () => { },
-});
+import { useContext } from "react";
+import MenuContext from "../../contexts/MenuContext";
 
 const Header = () => {
-    const [showMenu, setShowMenu] = useState(false);
-
-    const toggleMenu = () => {
-        setShowMenu((prevShowMenu) => !prevShowMenu);
-    };
+    const { showMenu } = useContext(MenuContext);
 
     return (
-        <MenuContext.Provider value={{ showMenu, toggleMenu }}>
-            <header className='fixed z-10 top-0 left-0 right-0 bg-dark w-full py-6 px-8 shadow-lg' >
-                <div className="flex justify-between items-center max-w-container min-w-[40px] mx-auto">
-                    <a href="#home" className="text-gray hover:text-link">
-                        &lt;
-                        <span className='text-gray'>ericsmslvdr </span>
-                        &#47;&gt;
-                    </a >
+        <header className='fixed z-10 top-0 left-0 right-0 bg-dark w-full py-6 px-8 shadow-lg' >
+            <div className="flex justify-between items-center max-w-container min-w-[40px] mx-auto">
+                <a href="#home" className="text-gray hover:text-link">
+                    &lt;
+                    <span className='text-gray'>ericsmslvdr </span>
+                    &#47;&gt;
+                </a >
 
-                    <nav className="md:flex md:items-center hidden">
+                <nav className="md:flex md:items-center hidden">
+                    <NavItems />
+                </nav>
+
+                <MenuIcon />
+
+                {showMenu && (
+                    <nav className="md:hidden absolute top-20 left-0 right-0 bg-dark py-4 px-8 shadow-lg">
                         <NavItems />
                     </nav>
+                )}
 
-                    <MenuIcon />
-
-                    {showMenu && (
-                        <nav className="md:hidden absolute top-20 left-0 right-0 bg-dark py-4 px-8 shadow-lg">
-                            <NavItems />
-                        </nav>
-                    )}
-
-                </div>
-            </header >
-        </MenuContext.Provider>
+            </div>
+        </header >
     )
 }
 
 export default Header
 
 const NavItems = () => {
-    const { toggleMenu } = useContext(MenuContext)
+    const { closeMenu, scrollToSection, homeRef, skillsRef, projectsRef, contactMeRef } = useContext(MenuContext)
+
+    const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+        scrollToSection(ref)
+        closeMenu()
+    }
 
     return (
         <ul className='flex items-end gap-4 text-gray flex-col md:flex-row'>
-            <li><a href="#home" className='hover:text-link' aria-label="Navigate to Home section" onClick={toggleMenu}>Home</a></li>
-            <li><a href="#skills" className='hover:text-link' aria-label="Navigate to Skills section" onClick={toggleMenu}>Skills</a></li>
-            <li><a href="#projects" className='hover:text-link' aria-label="Navigate to Projects section" onClick={toggleMenu}>Projects</a></li>
-            <li><a href="#contacts" className='hover:text-link' aria-label="Navigate to Contact Me section" onClick={toggleMenu}>Contact Me</a></li>
+            <li className='hover:text-link' onClick={() => handleScrollToSection(homeRef)}>Home</li>
+            <li className='hover:text-link' onClick={() => handleScrollToSection(skillsRef)}>Skills</li>
+            <li className='hover:text-link' onClick={() => handleScrollToSection(projectsRef)}>Projects</li>
+            <li className='hover:text-link' onClick={() => handleScrollToSection(contactMeRef)}>Contact Me</li>
         </ul>
     )
 }
@@ -87,7 +82,7 @@ const MenuIcon = () => {
     )
 
     return (
-        <div className="md:hidden">
+        <div className="md:hidden cursor-pointer">
             {menuIcon}
         </div>
     )

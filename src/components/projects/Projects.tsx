@@ -6,8 +6,11 @@ import gwCMSDemo from '@videos/gw-cms.webm';
 import gwDemo from '@videos/gw.webm';
 import pattrackDemo from '@videos/pattrack.mp4'
 import ProjectCard from './components/ProjectCard';
+import { useContext } from 'react';
+import MenuContext from '../../contexts/MenuContext';
 
 const Projects = () => {
+    const { projectsRef } = useContext(MenuContext);
 
     const projects: ProjectCard[] = [
         {
@@ -162,7 +165,7 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="flex flex-col max-w-container mx-auto mt-16 px-9 md:px-0">
+        <section ref={projectsRef} className="flex flex-col max-w-container mx-auto mt-16 px-9 md:px-0">
             <h1 className='text-xl text-light'>#Projects</h1>
             <div className="flex flex-col gap-10 mt-6">
                 {projects.map((project, index) => (

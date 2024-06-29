@@ -1,8 +1,12 @@
 import profileImage from '@images/me.webp';
+import { useContext } from 'react';
+import MenuContext from '../../contexts/MenuContext';
 
 const Hero = () => {
+    const { homeRef } = useContext(MenuContext);
+
     return (
-        <section className="flex flex-col justify-between items-center max-w-container mx-auto pt-44 pb-32 gap-7 md:flex-row" id="home">
+        <section ref={homeRef} className="flex flex-col justify-between items-center max-w-container mx-auto pt-44 pb-32 gap-7 md:flex-row">
             <figure className="w-48 h-48 md:min-w-48 rounded-full border-4 border-solid border-sky-500 overflow-hidden">
                 <img
                     src={profileImage}

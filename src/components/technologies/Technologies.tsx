@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import MenuContext from "../../contexts/MenuContext";
 
 const Technologies = () => {
+    const { skillsRef } = useContext(MenuContext);
 
     const techs = [
         {
@@ -49,7 +52,7 @@ const Technologies = () => {
     ]
 
     return (
-        <div id="skills" className="flex flex-col max-w-container mx-auto pt-4 px-8 md:px-0">
+        <section ref={skillsRef} className="flex flex-col max-w-container mx-auto pt-4 px-8 md:px-0">
             <h1 className="text-xl text-light">#Technologies</h1>
             <div className="grid grid-cols-2 gap-6 mt-6 sm:grid-cols-3 md:grid-cols-4">
                 {techs.map((tech, index) => (
@@ -59,7 +62,7 @@ const Technologies = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 
