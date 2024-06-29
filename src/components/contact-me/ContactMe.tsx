@@ -4,7 +4,7 @@ import useEmail, { FormDataType } from "../../hooks/useEmail";
 
 const ContactMe = () => {
     const { contactMeRef } = useContext(MenuContext);
-    const { sendEmail, status, error } = useEmail();
+    const { sendEmail } = useEmail();
 
     const [formData, setFormData] = useState<FormDataType>({
         from_name: '',
