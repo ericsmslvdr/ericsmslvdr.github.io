@@ -5,7 +5,6 @@ export type FormDataType = {
     from_name: string;
     from_email: string;
     message: string;
-
 }
 
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -13,30 +12,36 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
 const useEmail = () => {
-    const [status, setStatus] = useState<{ success: boolean, response?: any } | null>(null);
+    const [status, setStatus] = useState<{ statusCode: number, response?: any } | null>(null);
     const [error, setError] = useState<any | null>(null);
 
-    const sendEmail = async ({ from_name, from_email, message }: FormDataType) => {
+    const sendEmail = async ({ from_name, from_email, message }: FormDataType, token: string | null | undefined) => {
         setStatus(null)
         setError(null)
 
+        let template_params = {
+            from_name,
+            from_email,
+            message,
+            'g-recaptcha-response': token
+        }
+
         try {
-            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, { from_name, from_email, message }, {
+            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, template_params, {
                 publicKey: PUBLIC_KEY,
             });
-            console.log('SUCCESS!', response.status, response.text);
-            setStatus({ success: true, response });
-        } catch (error) {
-            console.log('FAILED...', error);
+            setStatus({ statusCode: response.status, response });
+        } catch (error: any) {
             setError(error);
-            setStatus({ success: false });
+            setStatus({ statusCode: error.status });
         }
     }
 
     return {
         sendEmail,
         status,
-        error
+        error,
+        setError
     }
 }
 
