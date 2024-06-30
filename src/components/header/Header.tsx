@@ -2,16 +2,23 @@ import { useContext } from "react";
 import MenuContext from "../../contexts/MenuContext";
 
 const Header = () => {
-    const { showMenu } = useContext(MenuContext);
+    const { showMenu, homeRef, scrollToSection } = useContext(MenuContext);
+
+    const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+        scrollToSection(ref)
+    }
 
     return (
         <header className='fixed z-10 top-0 left-0 right-0 bg-dark w-full py-6 px-8 shadow-lg' >
             <div className="flex justify-between items-center max-w-container min-w-[40px] mx-auto">
-                <a href="#home" className="text-gray hover:text-link">
+                <span
+                    className="text-gray hover:text-link cursor-pointer"
+                    onClick={() => handleScrollToSection(homeRef)}
+                >
                     &lt;
                     <span className='text-gray'>ericsmslvdr </span>
                     &#47;&gt;
-                </a >
+                </span >
 
                 <nav className="md:flex md:items-center hidden">
                     <NavItems />
@@ -42,10 +49,10 @@ const NavItems = () => {
 
     return (
         <ul className='flex items-end gap-4 text-gray flex-col md:flex-row'>
-            <li className='hover:text-link' onClick={() => handleScrollToSection(homeRef)}>Home</li>
-            <li className='hover:text-link' onClick={() => handleScrollToSection(skillsRef)}>Skills</li>
-            <li className='hover:text-link' onClick={() => handleScrollToSection(projectsRef)}>Projects</li>
-            <li className='hover:text-link' onClick={() => handleScrollToSection(contactMeRef)}>Contact Me</li>
+            <li className='hover:text-link cursor-pointer' onClick={() => handleScrollToSection(homeRef)}>Home</li>
+            <li className='hover:text-link cursor-pointer' onClick={() => handleScrollToSection(skillsRef)}>Skills</li>
+            <li className='hover:text-link cursor-pointer' onClick={() => handleScrollToSection(projectsRef)}>Projects</li>
+            <li className='hover:text-link cursor-pointer' onClick={() => handleScrollToSection(contactMeRef)}>Contact Me</li>
         </ul>
     )
 }
