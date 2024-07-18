@@ -19,7 +19,7 @@ const useEmail = () => {
         setStatus(null)
         setError(null)
 
-        let template_params = {
+        const template_params = {
             from_name,
             from_email,
             message,
