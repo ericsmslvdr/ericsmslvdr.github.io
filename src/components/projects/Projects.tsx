@@ -166,7 +166,7 @@ const Projects = () => {
 
     return (
         <section ref={projectsRef} className="flex flex-col max-w-container mx-auto mt-16 px-9 md:px-0">
-            <h1 className='text-xl text-light'>#Projects</h1>
+            <h1 className='text-xl text-lightText dark:text-darkText'>#Projects</h1>
             <div className="flex flex-col gap-10 mt-6">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} projectCard={project}>

@@ -8,7 +8,7 @@ import Technologies from "./components/technologies/Technologies"
 function App() {
 
   return (
-    <div className="bg-dark">
+    <div className="bg-lightBackground dark:bg-darkBackground">
       <Header />
       <main>
         <Hero />

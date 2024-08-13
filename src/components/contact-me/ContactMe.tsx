@@ -96,16 +96,16 @@ const ContactMe = () => {
 
     return (
         <section ref={contactMeRef} className="flex flex-col max-w-container mx-auto mt-16 px-8 md:px-0">
-            <h1 className='text-xl text-light'>#Contact Me</h1>
+            <h1 className='text-xl text-lightText dark:text-darkText'>#Contact Me</h1>
             <main className="flex flex-col md:flex-row gap-8 mt-6">
-                <form onSubmit={handleSubmit} className="border border-neutral-700 rounded-lg p-4 w-full md:w-2/3">
+                <form onSubmit={handleSubmit} className="border border-neutral-300 dark:border-neutral-700 rounded-lg p-4 w-full md:w-2/3">
                     <div
                         data-sitekey="6LehNQQqAAAAAMad765dJ8C-fwH_hrS4j0AbVxFy"
                         data-action="send_email"
                         className="g-recaptcha flex flex-col md:flex-row md:items-center gap-4"
                     >
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="from_name" className="text-gray">Name:</label>
+                            <label htmlFor="from_name" className="text-lightSecondaryText dark:text-darkSecondaryText">Name:</label>
                             <input
                                 type="text"
                                 name="from_name"
@@ -113,12 +113,12 @@ const ContactMe = () => {
                                 required
                                 value={formData.from_name}
                                 onChange={handleOnChange}
-                                className="w-full border-0 py-3 px-5 rounded-lg bg-dark text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
+                                className="w-full border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-700  dark:text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                                 placeholder="Your name here"
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="from_email" className="text-gray">Email:</label>
+                            <label htmlFor="from_email" className="text-lightSecondaryText dark:text-darkSecondaryText">Email:</label>
                             <input
                                 type="email"
                                 name="from_email"
@@ -126,13 +126,13 @@ const ContactMe = () => {
                                 required
                                 value={formData.from_email}
                                 onChange={handleOnChange}
-                                className="w-full border-0 py-3 px-5 rounded-lg bg-dark text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
+                                className="w-full border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                                 placeholder="your@email.com"
                             />
                         </div>
                     </div>
                     <div className="flex flex-col gap-2 mt-4">
-                        <label htmlFor="message" className="text-gray">Message:</label>
+                        <label htmlFor="message" className="text-lightSecondaryText dark:text-darkSecondaryText">Message:</label>
                         <textarea
                             name="message"
                             id="message"
@@ -140,7 +140,7 @@ const ContactMe = () => {
                             required
                             value={formData.message}
                             onChange={handleOnChange}
-                            className="border-0 py-3 px-5 rounded-lg bg-dark text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
+                            className="border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                             placeholder="What's on your mind today?"
                         ></textarea>
                     </div>
@@ -170,37 +170,51 @@ const ContactMe = () => {
                     </div>}
                 </form>
                 <div className="flex flex-col w-full md:w-1/3">
-                    <h2 className="text-light">Or get in touch with me through...</h2>
-                    <div className="mt-6 flex flex-col gap-4">
-                        <a href="mailto:ericsmsalvador@gmail.com" target="_blank">
-                            <div className="flex gap-2 items-center border border-neutral-700 rounded-lg py-2 px-4 hover:bg-neutral-950 group">
-                                <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" className="h-6 w-6" alt="" />
-                                <h2 className="text-center text-gray text-sm group-hover:text-link">Gmail</h2>
-                            </div>
-                        </a>
-                        <a href="https://discordapp.com/users/ctrlcccv" target="_blank">
-                            <div className="flex gap-2 items-center border border-neutral-700 rounded-lg py-2 px-4 hover:bg-neutral-950 group">
-                                <img src="https://img.icons8.com/?size=100&id=65646&format=png&color=000000" className="h-6 w-6" alt="" />
-                                <h2 className="text-center text-gray text-sm group-hover:text-link">Discord</h2>
-                            </div>
-                        </a>
-                        <a href="https://m.me/ericsmslvdr" target="_blank">
-                            <div className="flex gap-2 items-center border border-neutral-700 rounded-lg py-2 px-4 hover:bg-neutral-950 group">
-                                <img src="https://img.icons8.com/?size=100&id=YFbzdUk7Q3F8&format=png&color=000000" className="h-6 w-6" alt="" />
-                                <h2 className="text-center text-gray text-sm group-hover:text-link">Messenger</h2>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ericsmsalvador/" target="_blank">
-                            <div className="flex gap-2 items-center border border-neutral-700 rounded-lg py-2 px-4 hover:bg-neutral-950 group">
-                                <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" className="h-6 w-6" alt="" />
-                                <h2 className="text-center text-gray text-sm group-hover:text-link">LinkedIn</h2>
-                            </div>
-                        </a>
-                    </div>
+                    <h2 className="text-lightText dark:text-darkText">Or get in touch with me through...</h2>
+                    <ConnectWithMe />
                 </div>
             </main>
-        </section>
+        </section >
     )
 }
 
 export default ContactMe
+
+const ConnectWithMe = () => {
+
+    const otherMeansOfCommunication = [
+        {
+            name: "Gmail",
+            link: "mailto:ericsmsalvador@gmail.com",
+            icon: <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" className="h-6 w-6" alt="" />
+        },
+        {
+            name: "Discord",
+            link: "https://discordapp.com/users/ctrlcccv",
+            icon: <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" className="h-6 w-6" alt="" />
+        },
+        {
+            name: "Messenger",
+            link: "https://m.me/ericsmslvdr",
+            icon: <img src="https://img.icons8.com/?size=100&id=YFbzdUk7Q3F8&format=png&color=000000" className="h-6 w-6" alt="" />
+        },
+        {
+            name: "LinkedIn",
+            link: "https://www.linkedin.com/in/ericsmsalvador/",
+            icon: <img src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000" className="h-6 w-6" alt="" />
+        },
+    ]
+
+    return (
+        <div className="mt-6 flex flex-col gap-4">
+            {otherMeansOfCommunication.map((comm, index) => (
+                < a href={comm.link} target="_blank" key={index}>
+                    <div className="flex gap-2 items-center border border-neutral-300 dark:border-neutral-700 rounded-lg py-2 px-4 hover:bg-neutral-400/10 dark:hover:bg-neutral-950 group">
+                        {comm.icon}
+                        <h2 className="text-center text-lightSecondaryText dark:text-darkSecondaryText text-sm group-hover:text-link">{comm.name}</h2>
+                    </div>
+                </a >
+            ))}
+        </div>
+    )
+}
