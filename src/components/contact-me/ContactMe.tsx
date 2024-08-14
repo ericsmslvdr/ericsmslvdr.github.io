@@ -12,10 +12,7 @@ const ContactMe = () => {
     const token = captchaRef.current?.getValue();
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-    const [buttonPosition, setButtonPosition] = useState({
-        left: '',
-        right: '0'
-    })
+    const [buttonPosition, setButtonPosition] = useState('0')
 
     const [formData, setFormData] = useState<FormDataType>({
         from_name: '',
@@ -33,21 +30,24 @@ const ContactMe = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+        if (!token) {
+            console.log("Captcha error");
+            return;
+        }
+
         await sendEmail(formData, token)
-        setFormData(prev => ({
-            ...prev,
+        setFormData({
             from_name: '',
             from_email: '',
             message: '',
-        }))
-        setButtonPosition({
-            left: '',
-            right: '0'
         })
-        console.log('sent');
+        setButtonPosition('0')
         if (captchaRef.current) {
             captchaRef.current.reset();
         }
+
+        console.log('Email sent');
     }
 
     const changeButtonPosition = () => {
@@ -59,18 +59,13 @@ const ContactMe = () => {
             const containerWidth = containerRect.width;
             const buttonWidth = buttonRect.width;
 
-            let newLeft;
-            let newRight;
+            let newPosition;
 
             do {
-                newLeft = `${Math.floor(Math.random() * (containerWidth - buttonWidth))}`;
-                newRight = `${Math.floor(containerWidth - parseFloat(newLeft) - buttonWidth)}`;
-            } while (
-                Math.abs(parseFloat(newLeft) - parseFloat(buttonPosition.left)) < buttonWidth ||
-                Math.abs(parseFloat(newRight) - parseFloat(buttonPosition.right)) < buttonWidth
-            );
+                newPosition = Math.floor(Math.random() * (containerWidth - buttonWidth));
+            } while (Math.abs(newPosition - parseFloat(buttonPosition)) < buttonWidth);
 
-            setButtonPosition({ left: `${newLeft}px`, right: `${newRight}px` });
+            setButtonPosition(`${newPosition}px`);
         }
     };
 
@@ -86,10 +81,7 @@ const ContactMe = () => {
 
     useEffect(() => {
         if (error) {
-            const timer = setTimeout(() => {
-                setError(null);
-            }, 3000);
-
+            const timer = setTimeout(() => setError(null), 3000);
             return () => clearTimeout(timer);
         }
     }, [error]);
@@ -154,10 +146,7 @@ const ContactMe = () => {
                         <button
                             ref={buttonRef}
                             className={`${isFormEmpty() ? 'cursor-not-allowed' : ''} absolute top-0 flex w-full md:w-fit items-center justify-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-all duration-300 ease-in-out`}
-                            style={{
-                                left: `${buttonPosition.left}`,
-                                right: `${buttonPosition.right}`
-                            }}
+                            style={{ right: `${buttonPosition}` }}
                             onMouseEnter={handleMouseEnter}
                             type="submit"
                         >
