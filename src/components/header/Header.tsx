@@ -28,7 +28,7 @@ const Header = () => {
                 <MenuIcon />
 
                 {showMenu && (
-                    <nav className="md:hidden absolute top-20 left-0 right-0 bg-dark py-4 px-8 shadow-lg">
+                    <nav className="md:hidden absolute top-16 left-0 right-0 bg-lightBackground dark:bg-darkBackground py-4 px-8 shadow-lg">
                         <NavItems />
                     </nav>
                 )}
