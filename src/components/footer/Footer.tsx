@@ -39,7 +39,7 @@ const Footer = () => {
                             <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" alt="" className="h-6 w-6" />
                         </a>
                     </div>
-                    <a href="https://github.com/ericsmslvdr/my-website" target="_blank" className="group">
+                    <a href="https://github.com/ericsmslvdr/ericsmslvdr.github.io" target="_blank" className="group">
                         <span className="flex items-center text-sm group-hover:text-lightLink dark:group-hover:text-darkLink ">
                             Source Code
                             <svg
