@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { FormDataType } from '../types/emailTypes';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Button from '../../../components/button/Button';
@@ -77,7 +77,7 @@ const ContactForm = () => {
             changeButtonPosition();
         }
     }
-    
+
     return (
         <form onSubmit={handleSubmit} className="border border-neutral-300 dark:border-neutral-700 rounded-lg p-4 w-full md:w-2/3">
             <div
