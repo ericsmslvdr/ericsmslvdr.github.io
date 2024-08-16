@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import MenuContext from "../../contexts/MenuContext";
+import { useMenu } from "../../contexts/MenuContext";
 
-const Technologies = () => {
-    const { skillsRef } = useContext(MenuContext);
+const Skills = () => {
+    const { skillsRef } = useMenu();
 
     const techs = [
         {
@@ -66,4 +65,4 @@ const Technologies = () => {
     )
 }
 
-export default Technologies
+export default Skills

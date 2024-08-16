@@ -1,9 +1,7 @@
-import profileImage from '@images/me.webp';
-import { useContext } from 'react';
-import MenuContext from '../../contexts/MenuContext';
-
+import { useMenu } from '../../contexts/MenuContext';
+import profileImage from './assets/me.webp';
 const Hero = () => {
-    const { homeRef } = useContext(MenuContext);
+    const { homeRef } = useMenu();
 
     const socials = [
         {

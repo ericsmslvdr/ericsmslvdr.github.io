@@ -1,16 +1,15 @@
-import davaoDemo from '@videos/davao.webm';
-import officesDemo from '@videos/offices.webm';
-import commercialDemo from '@videos/commercial.webm';
-import research from '@images/research.webp';
-import gwCMSDemo from '@videos/gw-cms.webm';
-import gwDemo from '@videos/gw.webm';
-import pattrackDemo from '@videos/pattrack.mp4'
 import ProjectCard from './components/ProjectCard';
-import { useContext } from 'react';
-import MenuContext from '../../contexts/MenuContext';
+import { useMenu } from '../../contexts/MenuContext';
+import davaoDemo from './assets/videos/davao.webm';
+import officesDemo from './assets/videos/offices.webm';
+import commercialDemo from './assets/videos/commercial.webm';
+import research from './assets/images/research.webp';
+import gwCMSDemo from './assets/videos/gw-cms.webm';
+import gwDemo from './assets/videos/gw.webm';
+import pattrackDemo from './assets/videos/pattrack.mp4';
 
 const Projects = () => {
-    const { projectsRef } = useContext(MenuContext);
+    const { projectsRef } = useMenu();
 
     const projects: ProjectCard[] = [
         {

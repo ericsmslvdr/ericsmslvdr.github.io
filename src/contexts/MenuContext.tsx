@@ -1,18 +1,21 @@
-import React, { ReactNode, createContext, useRef, useState } from "react";
+import { ReactNode, RefObject, createContext, useContext, useRef, useState } from "react";
 
-const MenuContext = createContext({
-    toggleMenu: () => { },
-    closeMenu: () => { },
-    showMenu: false,
-    scrollToSection: (_ref: React.RefObject<HTMLDivElement>) => { },
-    homeRef: {} as React.RefObject<HTMLDivElement>,
-    skillsRef: {} as React.RefObject<HTMLDivElement>,
-    projectsRef: {} as React.RefObject<HTMLDivElement>,
-    contactMeRef: {} as React.RefObject<HTMLDivElement>,
-})
+type MenuContextProps = {
+    toggleMenu: () => void;
+    closeMenu: () => void;
+    showMenu: boolean;
+    scrollToSection: (ref: RefObject<HTMLDivElement>) => void;
+    homeRef: RefObject<HTMLDivElement>;
+    skillsRef: RefObject<HTMLDivElement>;
+    projectsRef: RefObject<HTMLDivElement>;
+    contactMeRef: RefObject<HTMLDivElement>;
+}
+
+const MenuContext = createContext<MenuContextProps | undefined>(undefined)
 
 export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
     const [showMenu, setShowMenu] = useState(false);
+
     const homeRef = useRef<HTMLDivElement>(null);
     const skillsRef = useRef<HTMLDivElement>(null);
     const projectsRef = useRef<HTMLDivElement>(null);
@@ -23,17 +26,17 @@ export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const closeMenu = () => {
-        setShowMenu(false)
+        setShowMenu(false);
     }
 
-    const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
         if (ref.current) {
-            ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-
-            const offsetTop = ref.current.getBoundingClientRect().top + window.scrollY - 100;
+            const section = ref.current;
+            const sectionTop = section.getBoundingClientRect().top;
+            const scrollPosition = sectionTop + window.scrollY - 100;
 
             window.scrollTo({
-                top: offsetTop,
+                top: scrollPosition,
                 behavior: "smooth",
             });
         }
@@ -57,4 +60,12 @@ export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
     )
 }
 
-export default MenuContext
+export default MenuContext;
+
+export const useMenu = () => {
+    const context = useContext(MenuContext);
+    if (!context) {
+        throw new Error('useMenu must be used within a MenuContextProvider');
+    }
+    return context;
+}

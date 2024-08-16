@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import Button from "../../../components/button/Button";
 
-const Toggle = () => {
+const ThemeButton = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>(() => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) return savedTheme as 'light' | 'dark';
@@ -24,13 +25,13 @@ const Toggle = () => {
     }
 
     return (
-        <div
+        <Button
             onClick={handleToggle}
             className="transition-all duration-300 group hover:-rotate-45"
         >
-            <img src={icon[theme]} className='size-6 cursor-pointer' alt="" />
-        </div>
+            <img src={icon[theme]} className='size-6 cursor-pointer -rotate-12' alt="" />
+        </Button>
     )
 }
 
-export default Toggle
+export default ThemeButton

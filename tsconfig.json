@@ -8,16 +8,16 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "compilerOptions": {
-    /* Absolute imports */
-    "baseUrl": "./src",
-    "paths": {
-      "@images/*": [
-        "assets/images/*"
-      ],
-      "@videos/*": [
-        "assets/videos/*"
-      ]
-    }
-  }
+  // "compilerOptions": {
+  //   /* Absolute imports */
+  //   "baseUrl": "./src",
+  //   "paths": {
+  //     "@images/*": [
+  //       "assets/images/*"
+  //     ],
+  //     "@videos/*": [
+  //       "assets/videos/*"
+  //     ]
+  //   }
+  // }
 }
