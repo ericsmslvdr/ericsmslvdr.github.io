@@ -15,7 +15,7 @@ type ProjectCard = {
     source: string;
     isReversed: boolean;
     title: string;
-    link: string;
+    link: string | undefined;
     typeOfProject: string;
     projectDescription: string;
     features?: {
