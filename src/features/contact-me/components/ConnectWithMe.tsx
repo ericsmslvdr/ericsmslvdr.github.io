@@ -9,7 +9,7 @@ const ConnectWithMe = () => {
         {
             name: "Discord",
             link: "https://discordapp.com/users/ctrlcccv",
-            icon: <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" className="h-6 w-6" alt="" />
+            icon: <img src="https://img.icons8.com/?size=100&id=SAZw8WuWnQea&format=png&color=000000" className="h-6 w-6" alt="" />
         },
         {
             name: "Messenger",
