@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Button from "../../../components/button/Button";
+import Button from "../../ui/button/button";
 
 const ThemeButton = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>(() => {

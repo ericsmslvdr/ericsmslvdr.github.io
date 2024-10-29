@@ -1,9 +1,9 @@
-import Header from '../../features/header/Header'
-import Hero from '../../features/hero/Hero'
-import Skills from '../../features/skills/Skills'
-import Projects from '../../features/projects/Projects'
-import ContactMe from '../../features/contact-me/ContactMe'
-import Footer from '../../features/footer/Footer'
+import { ContactMe } from "@/components/contact-me"
+import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
+import { Hero } from "@/components/hero"
+import { Projects } from "@/components/projects"
+import { Skills } from "@/components/skills"
 
 const Home = () => {
     return (

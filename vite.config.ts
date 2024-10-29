@@ -6,10 +6,9 @@ export default defineConfig({
   base: "/",
   plugins: [react()],
   assetsInclude: ['**/*.svg'],
-  // resolve: {
-  //   alias: {
-  //     '@images': '/src/assets/images',
-  //     '@videos': '/src/assets/videos',
-  //   }
-  // }
+  resolve: {
+    alias: {
+      '@': '/src',
+    }
+  }
 })

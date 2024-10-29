@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { FormDataType } from '../types/emailTypes';
 import ReCAPTCHA from 'react-google-recaptcha';
-import Button from '../../../components/button/Button';
+import Button from '../../ui/button/button';
 import useEmail from '../hooks/useEmail';
-import Spinner from '../../../components/spinner/Spinner';
+import Spinner from '../../ui/spinner/spinner';
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY!;
 
 const ContactForm = () => {
