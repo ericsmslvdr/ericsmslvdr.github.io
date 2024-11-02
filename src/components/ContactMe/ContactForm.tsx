@@ -3,6 +3,10 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Button from "../ui/Button";
 import Spinner from "../ui/Spinner";
+import Input from "../ui/Input";
+import Label from "../ui/Label";
+import TextArea from "../ui/TextArea";
+import sendIcon from "@/assets/icons/send-icon.png";
 
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY!;
 
@@ -35,7 +39,8 @@ function ContactForm() {
         try {
             if (captchaRef.current) {
                 const token = await captchaRef.current.executeAsync();
-
+                captchaRef.current.reset();
+                
                 if (!token) {
                     throw new Error("Captcha error");
                 }
@@ -102,63 +107,41 @@ function ContactForm() {
                 className="g-recaptcha flex flex-col gap-4"
             >
                 <div className="flex flex-col gap-2">
-                    <label
-                        htmlFor="from_name"
-                        className="text-lightSecondaryText dark:text-darkSecondaryText"
-                    >
-                        Name:
-                    </label>
-                    <input
+                    <Label htmlFor="from_name">Name:</Label>
+                    <Input
                         type="text"
                         name="from_name"
                         id="from_name"
-                        required
                         value={formData.from_name}
                         onChange={handleOnChange}
-                        className="w-full border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-700  dark:text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                         placeholder="Your name here"
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label
-                        htmlFor="from_email"
-                        className="text-lightSecondaryText dark:text-darkSecondaryText"
-                    >
-                        Email:
-                    </label>
-                    <input
+                    <Label htmlFor="from_email">Email:</Label>
+                    <Input
                         type="email"
                         name="from_email"
                         id="from_email"
-                        required
                         value={formData.from_email}
                         onChange={handleOnChange}
-                        className="w-full border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                         placeholder="your@email.com"
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label
-                        htmlFor="message"
-                        className="text-lightSecondaryText dark:text-darkSecondaryText"
-                    >
-                        Message:
-                    </label>
-                    <textarea
+                    <Label htmlFor="message">Message:</Label>
+                    <TextArea
                         name="message"
                         id="message"
-                        rows={5}
-                        required
                         value={formData.message}
                         onChange={handleOnChange}
                         className="border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                         placeholder="What's on your mind today?"
-                    ></textarea>
+                    />
 
                     <span className="text-neutral-500 text-[11px]">
                         This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" className="text-blue-500">Privacy Policy</a> and <a href="https://policies.google.com/terms" className="text-blue-500">Terms of Service</a> apply.
                     </span>
-
                 </div>
                 <div className="hidden">
                     <ReCAPTCHA
@@ -181,7 +164,7 @@ function ContactForm() {
                             <>
                                 Send
                                 <img
-                                    src="https://img.icons8.com/?size=100&id=40007&format=png&color=000000"
+                                    src={sendIcon}
                                     className="h-4 w-4"
                                     alt=""
                                 />

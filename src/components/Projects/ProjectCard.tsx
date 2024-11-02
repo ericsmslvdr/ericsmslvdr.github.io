@@ -1,4 +1,5 @@
 import { PropsWithChildren, createContext, useContext } from "react";
+import LinkText from "../ui/LinkText";
 
 type ProjectCardContext = {
     projectCard: ProjectCard;
@@ -86,25 +87,18 @@ const ProjectCardContent = () => {
 
     return (
         <div className="w-full md:w-2/5 h-auto">
-            <a
-                href={projectCard.link}
-                target='_blank'
-                rel="noopener noreferrer"
-                aria-label={`View ${projectCard.title}`}
-                className="text-lightText dark:text-darkText hover:text-lightLink dark:hover:text-darkLink flex items-center group"
-            >
-                <span className="truncate">{projectCard.title}</span>
-                {
-                    projectCard.link !== '' &&
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 ml-1 text-light group-hover:text-link"
-                        viewBox="0 0 24 24"
-                    >
-                        <path fill="currentColor" d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
-                    </svg>
-                }
-            </a>
+            {projectCard.link !== "" ? (
+                <LinkText
+                    href={projectCard.link}
+                    aria-label={`View ${projectCard.title}`}
+                    text={projectCard.title}
+                    textClassName="text-lightText dark:text-darkText"
+                    iconClassName="h-5 w-5"
+                />
+            ) : (
+                <span className="text-lightText dark:text-darkText">{projectCard.title}</span>
+            )}
+
             <h2 className='text-sm text-lightSecondaryText dark:text-darkSecondaryText italic'>{projectCard.typeOfProject}</h2>
             <p className="my-4 text-lightSecondaryText dark:text-darkSecondaryText text-sm">{projectCard.projectDescription}</p>
             {projectCard.features && (

@@ -17,12 +17,12 @@ function NavItems() {
     }
 
     return (
-        <ul className='flex items-end gap-4 flex-col text-lightSecondaryText dark:text-darkSecondaryText md:flex-row md:items-center'>
+        <ul className='flex items-end gap-4 flex-col md:flex-row md:items-center text-lightSecondaryText dark:text-darkSecondaryText'>
             <li className='hover:text-lightLink dark:hover:text-darkLink cursor-pointer' onClick={() => handleScrollToSection(homeRef)}>Home</li>
             <li className='hover:text-lightLink dark:hover:text-darkLink cursor-pointer' onClick={() => handleScrollToSection(skillsRef)}>Skills</li>
             <li className='hover:text-lightLink dark:hover:text-darkLink cursor-pointer' onClick={() => handleScrollToSection(projectsRef)}>Projects</li>
             <li className='hover:text-lightLink dark:hover:text-darkLink cursor-pointer' onClick={() => handleScrollToSection(contactMeRef)}>Contact Me</li>
-            <li><ThemeButton /></li>
+            <li className="flex items-center"><ThemeButton /></li>
         </ul>
     );
 }
