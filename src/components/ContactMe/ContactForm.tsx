@@ -1,53 +1,57 @@
-import useEmail from '@/hooks/useEmail';
-import React, { useRef, useState } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha';
-import Button from '../ui/Button';
-import Spinner from '../ui/Spinner';
+import useEmail from "@/hooks/useEmail";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import Button from "../ui/Button";
+import Spinner from "../ui/Spinner";
 
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY!;
 
 function ContactForm() {
     const { handleSendEmail, error, loading } = useEmail();
     const captchaRef = useRef<ReCAPTCHA>(null);
-    const token = captchaRef.current?.getValue();
     const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-    const [buttonPosition, setButtonPosition] = useState('0');
+    const [buttonPosition, setButtonPosition] = useState("0");
 
     const [formData, setFormData] = useState<FormDataType>({
-        from_name: '',
-        from_email: '',
-        message: '',
+        from_name: "",
+        from_email: "",
+        message: "",
     });
 
-    function handleOnChange(e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) {
+    function handleOnChange(
+        e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+    ) {
         const { name, value } = e.target;
-        setFormData(prev => ({
+        setFormData((prev) => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }));
     }
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        if (!token) {
-            console.log("Captcha error");
-            return;
-        }
+        try {
+            if (captchaRef.current) {
+                const token = await captchaRef.current.executeAsync();
 
-        await handleSendEmail(formData, token);
+                if (!token) {
+                    throw new Error("Captcha error");
+                }
 
-        setFormData({
-            from_name: '',
-            from_email: '',
-            message: '',
-        });
+                await handleSendEmail(formData, token);
 
-        setButtonPosition('0');
+                setFormData({
+                    from_name: "",
+                    from_email: "",
+                    message: "",
+                });
 
-        if (captchaRef.current) {
-            captchaRef.current.reset();
+                setButtonPosition("0");
+            }
+        } catch (error) {
+            console.error(`Error: ${error}`);
         }
     }
 
@@ -60,18 +64,26 @@ function ContactForm() {
             const containerWidth = containerRect.width;
             const buttonWidth = buttonRect.width;
 
-            const newPosition = Math.floor(Math.random() * (containerWidth - buttonWidth));
+            const newPosition = Math.floor(
+                Math.random() * (containerWidth - buttonWidth),
+            );
 
-            if (Math.abs(newPosition - parseFloat(buttonPosition)) >= buttonWidth) {
+            if (
+                Math.abs(newPosition - parseFloat(buttonPosition)) >=
+                buttonWidth
+            ) {
                 setButtonPosition(`${newPosition}px`);
             } else {
-                const offsetPosition = (newPosition + buttonWidth) % (containerWidth - buttonWidth);
+                const offsetPosition =
+                    (newPosition + buttonWidth) %
+                    (containerWidth - buttonWidth);
                 setButtonPosition(`${offsetPosition}px`);
             }
         }
-    };
+    }
 
-    const isFormEmpty = !formData.from_name || !formData.from_email || !formData.message || !token;
+    const isFormEmpty =
+        !formData.from_name || !formData.from_email || !formData.message;
 
     function handleMouseEnter() {
         if (isFormEmpty) {
@@ -80,14 +92,22 @@ function ContactForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="border border-neutral-300 dark:border-neutral-700 rounded-lg p-4 w-full md:w-2/3">
+        <form
+            onSubmit={handleSubmit}
+            className="border border-neutral-300 dark:border-neutral-700 rounded-lg p-4 w-full md:w-2/3"
+        >
             <div
-                data-sitekey="6LehNQQqAAAAAMad765dJ8C-fwH_hrS4j0AbVxFy"
+                data-sitekey={SITE_KEY}
                 data-action="send_email"
                 className="g-recaptcha flex flex-col gap-4"
             >
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="from_name" className="text-lightSecondaryText dark:text-darkSecondaryText">Name:</label>
+                    <label
+                        htmlFor="from_name"
+                        className="text-lightSecondaryText dark:text-darkSecondaryText"
+                    >
+                        Name:
+                    </label>
                     <input
                         type="text"
                         name="from_name"
@@ -100,7 +120,12 @@ function ContactForm() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="from_email" className="text-lightSecondaryText dark:text-darkSecondaryText">Email:</label>
+                    <label
+                        htmlFor="from_email"
+                        className="text-lightSecondaryText dark:text-darkSecondaryText"
+                    >
+                        Email:
+                    </label>
                     <input
                         type="email"
                         name="from_email"
@@ -113,7 +138,12 @@ function ContactForm() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-lightSecondaryText dark:text-darkSecondaryText">Message:</label>
+                    <label
+                        htmlFor="message"
+                        className="text-lightSecondaryText dark:text-darkSecondaryText"
+                    >
+                        Message:
+                    </label>
                     <textarea
                         name="message"
                         id="message"
@@ -124,16 +154,22 @@ function ContactForm() {
                         className="border-0 py-3 px-5 rounded-lg bg-lightBackground dark:bg-darkBackground text-sm text-neutral-400 placeholder:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-700 ring-1 ring-inset ring-neutral-400 dark:ring-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-400"
                         placeholder="What's on your mind today?"
                     ></textarea>
+
+                    <span className="text-neutral-500 text-[11px]">
+                        This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" className="text-blue-500">Privacy Policy</a> and <a href="https://policies.google.com/terms" className="text-blue-500">Terms of Service</a> apply.
+                    </span>
+
                 </div>
-                <div className="scale-75 md:scale-100 pt-4">
+                <div className="hidden">
                     <ReCAPTCHA
                         sitekey={SITE_KEY}
                         ref={captchaRef}
+                        size="invisible"
                     />
                 </div>
                 <div className="mt-4 relative h-10">
                     <Button
-                        className={`${isFormEmpty ? 'cursor-not-allowed' : ''} absolute top-0 flex w-full md:w-fit items-center justify-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-all duration-300 ease-in-out`}
+                        className={`${isFormEmpty ? "cursor-not-allowed" : ""} absolute top-0 flex w-full md:w-fit items-center justify-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-all duration-300 ease-in-out`}
                         style={{ right: `${buttonPosition}` }}
                         onMouseEnter={handleMouseEnter}
                         aria-label="Submit Form"
@@ -141,15 +177,23 @@ function ContactForm() {
                         ref={buttonRef}
                     >
                         {loading && <Spinner />}
-                        {!loading && <>
-                            Send
-                            <img src="https://img.icons8.com/?size=100&id=40007&format=png&color=000000" className="h-4 w-4" alt="" />
-                        </>}
+                        {!loading && (
+                            <>
+                                Send
+                                <img
+                                    src="https://img.icons8.com/?size=100&id=40007&format=png&color=000000"
+                                    className="h-4 w-4"
+                                    alt=""
+                                />
+                            </>
+                        )}
                     </Button>
                 </div>
-                {error && <div className="text-red-500 pt-8">
-                    <p className="text-sm">{error}</p>
-                </div>}
+                {error && (
+                    <div className="text-red-500 pt-8">
+                        <p className="text-sm">{error}</p>
+                    </div>
+                )}
             </div>
         </form>
     );
