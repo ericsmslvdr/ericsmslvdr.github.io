@@ -1,11 +1,12 @@
-import { MenuContextProvider } from "../contexts/MenuContext"
+import { PropsWithChildren } from "react";
+import { MenuContextProvider } from "@/contexts/MenuContext";
 
-const AppProvider = ({ children }: { children: React.ReactNode }) => {
+function AppProvider({ children }: PropsWithChildren) {
     return (
         <MenuContextProvider>
             {children}
         </MenuContextProvider>
-    )
+    );
 }
 
-export default AppProvider
+export default AppProvider;

@@ -1,4 +1,4 @@
-import { ReactNode, RefObject, createContext, useContext, useRef, useState } from "react";
+import { PropsWithChildren, RefObject, createContext, useContext, useRef, useState } from "react";
 
 type MenuContextProps = {
     toggleMenu: () => void;
@@ -9,11 +9,11 @@ type MenuContextProps = {
     skillsRef: RefObject<HTMLDivElement>;
     projectsRef: RefObject<HTMLDivElement>;
     contactMeRef: RefObject<HTMLDivElement>;
-}
+};
 
-const MenuContext = createContext<MenuContextProps | undefined>(undefined)
+const MenuContext = createContext<MenuContextProps | undefined>(undefined);
 
-export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
+export function MenuContextProvider({ children }: PropsWithChildren) {
     const [showMenu, setShowMenu] = useState(false);
 
     const homeRef = useRef<HTMLDivElement>(null);
@@ -21,15 +21,15 @@ export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
     const projectsRef = useRef<HTMLDivElement>(null);
     const contactMeRef = useRef<HTMLDivElement>(null);
 
-    const toggleMenu = () => {
+    function toggleMenu() {
         setShowMenu(!showMenu);
-    };
+    }
 
-    const closeMenu = () => {
+    function closeMenu() {
         setShowMenu(false);
     }
 
-    const scrollToSection = (ref: RefObject<HTMLDivElement>) => {
+    function scrollToSection(ref: RefObject<HTMLDivElement>) {
         if (ref.current) {
             const section = ref.current;
             const sectionTop = section.getBoundingClientRect().top;
@@ -50,22 +50,22 @@ export const MenuContextProvider = ({ children }: { children: ReactNode }) => {
         homeRef,
         skillsRef,
         projectsRef,
-        contactMeRef
-    }
+        contactMeRef,
+    };
 
     return (
         <MenuContext.Provider value={value}>
             {children}
         </MenuContext.Provider>
-    )
+    );
 }
 
-export default MenuContext;
-
-export const useMenu = () => {
+export function useMenu() {
     const context = useContext(MenuContext);
+
     if (!context) {
         throw new Error('useMenu must be used within a MenuContextProvider');
     }
+
     return context;
 }

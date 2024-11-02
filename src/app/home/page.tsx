@@ -1,11 +1,11 @@
-import { ContactMe } from "@/components/contact-me"
-import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
-import { Hero } from "@/components/hero"
-import { Projects } from "@/components/projects"
-import { Skills } from "@/components/skills"
+import { ContactMe } from "@/components/ContactMe";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
 
-const Home = () => {
+function Home() {
     return (
         <div className="bg-lightBackground dark:bg-darkBackground">
             <Header />
@@ -17,7 +17,7 @@ const Home = () => {
             </main>
             <Footer />
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;

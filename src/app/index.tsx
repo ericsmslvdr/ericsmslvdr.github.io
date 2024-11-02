@@ -1,13 +1,12 @@
-import Home from "./home/page"
-import AppProvider from "./provider"
+import Home from "./home/page";
+import AppProvider from "./provider";
 
-const App = () => {
-
+function App() {
     return (
         <AppProvider>
             <Home />
         </AppProvider>
-    )
+    );
 }
 
-export default App
+export default App;
