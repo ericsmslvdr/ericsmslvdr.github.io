@@ -12,27 +12,35 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@emailjs/browser": "^5.0.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-google-recaptcha": "^3.1.0",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@types/react-google-recaptcha": "^2.1.9",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "gh-pages": "^6.1.1",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "@typescript-eslint/eslint-plugin": "^8.72.2",
+    "@typescript-eslint/parser": "^8.72.2",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^10.15.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.0",
+    "vite": "^8.3.8"
+  },
+  "allowScripts": {
+    "@swc/core@1.16.22": true
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    }
   }
 }
