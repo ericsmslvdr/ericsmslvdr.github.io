@@ -1,5 +1,6 @@
+import { useRef, useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import useEmail from "@/hooks/useEmail";
-import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Button from "../ui/Button";
 import Spinner from "../ui/Spinner";
@@ -24,7 +25,7 @@ function ContactForm() {
     });
 
     function handleOnChange(
-        e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+        e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
     ) {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -33,7 +34,7 @@ function ContactForm() {
         }));
     }
 
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {

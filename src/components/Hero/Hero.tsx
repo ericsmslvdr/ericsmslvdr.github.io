@@ -1,6 +1,6 @@
 import { heroSocials } from "@/data/socials";
 import profileImage from "@/assets/images/me.webp";
-import { useMenu } from "@/contexts/MenuContext";
+import { useMenu } from "@/contexts/useMenu";
 import Icon from "../ui/Icon";
 
 function Hero() {

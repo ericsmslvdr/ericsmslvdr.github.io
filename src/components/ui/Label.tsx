@@ -1,12 +1,12 @@
-import { LabelHTMLAttributes, PropsWithChildren } from "react";
+import type { ComponentProps } from "react";
 
-type LabelProps = LabelHTMLAttributes<HTMLLabelElement>;
+type LabelProps = ComponentProps<"label">;
 
-function Label({ children, ...props }: PropsWithChildren<LabelProps>) {
+function Label({ children, ...props }: LabelProps) {
     return (
         <label
-            {...props}
             className="text-lightSecondaryText dark:text-darkSecondaryText"
+            {...props}
         >
             {children}
         </label>

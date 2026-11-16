@@ -1,11 +1,12 @@
-import { useMenu } from "@/contexts/MenuContext";
+import { useMenu } from "@/contexts/useMenu";
+import type { SectionRef } from "@/contexts/MenuContext";
 import MenuIcon from "./MenuIcon";
 import NavItems from "./NavItems";
 
 function Header() {
     const { showMenu, homeRef, scrollToSection } = useMenu();
 
-    function handleScrollToSection(ref: React.RefObject<HTMLDivElement>) {
+    function handleScrollToSection(ref: SectionRef) {
         scrollToSection(ref);
     }
 

@@ -6,15 +6,17 @@ import darkIcon from "@/assets/icons/theme/dark-mode.png";
 function ThemeButton() {
     const [theme, setTheme] = useState<'light' | 'dark'>(() => {
         const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) return savedTheme as 'light' | 'dark';
+        if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     });
 
     function handleToggle() {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    };
+        setTheme((currentTheme) => {
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            return newTheme;
+        });
+    }
 
     useEffect(() => {
         document.documentElement.classList.toggle('dark', theme === 'dark');

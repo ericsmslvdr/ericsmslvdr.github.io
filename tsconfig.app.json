@@ -20,11 +20,11 @@
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
+    "verbatimModuleSyntax": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Absolute Import */
-    "baseUrl": ".",
+    /* Absolute imports */
     "paths": {
       "@/*": ["./src/*"]
     }

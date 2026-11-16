@@ -17,13 +17,15 @@ function useEmail() {
                 code: response?.code,
                 message: response?.message,
             });
-            setLoading(false);
-        } catch (error: any) {
-            setError(error);
+        } catch (error: unknown) {
+            const message = error instanceof Error ? error.message : "Unable to send email.";
+            setError(message);
             setStatus({
-                code: error.code,
-                message: error.status,
+                code: undefined,
+                message,
             });
+        } finally {
+            setLoading(false);
         }
     }
 

@@ -1,11 +1,11 @@
-import { AnchorHTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
 
 type LinkTextProps = {
     text: string,
     textClassName?: string,
     iconClassName?: string,
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+} & ComponentProps<"a">;
 
 function LinkText({ text, textClassName, iconClassName, ...props }: LinkTextProps) {
     const textClassNameMerged = twJoin(

@@ -1,4 +1,4 @@
-import { useMenu } from '@/contexts/MenuContext';
+import { useMenu } from '@/contexts/useMenu';
 import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 

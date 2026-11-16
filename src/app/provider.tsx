@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import { MenuContextProvider } from "@/contexts/MenuContext";
+import type { PropsWithChildren } from "react";
+import { MenuContextProvider } from "@/contexts/MenuContextProvider";
 
 function AppProvider({ children }: PropsWithChildren) {
     return (

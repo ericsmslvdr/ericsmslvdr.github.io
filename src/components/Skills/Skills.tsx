@@ -1,4 +1,4 @@
-import { useMenu } from "@/contexts/MenuContext";
+import { useMenu } from "@/contexts/useMenu";
 import { technologies } from "@/data/technologies";
 import Icon from "../ui/Icon";
 

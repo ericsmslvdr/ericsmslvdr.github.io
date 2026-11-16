@@ -1,22 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* {
-  @apply transition-colors duration-300;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-darkBackground: #0c0f11;
+  --color-darkText: #eef5fc;
+  --color-darkSecondaryText: #a8adb2;
+  --color-darkLink: #3d7ac4;
+
+  --color-lightBackground: #eef5fc;
+  --color-lightText: #0c0f11;
+  --color-lightSecondaryText: #525252;
+  --color-lightLink: #1172f2;
+
+  --max-width-container: 48rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font: inherit
-}
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  *,
+  *::before,
+  *::after {
+    @apply transition-colors duration-300;
+  }
 
-body {
-  font-family: Poppins, sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+  }
 }

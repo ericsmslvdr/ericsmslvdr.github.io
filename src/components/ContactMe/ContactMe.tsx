@@ -1,4 +1,4 @@
-import { useMenu } from "@/contexts/MenuContext";
+import { useMenu } from "@/contexts/useMenu";
 import ContactForm from "./ContactForm";
 import OtherSocials from "./OtherSocials";
 

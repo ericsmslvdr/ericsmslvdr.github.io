@@ -1,8 +1,8 @@
-import { ImgHTMLAttributes } from "react";
+import type { ComponentProps } from "react";
 
-type IconProps = ImgHTMLAttributes<HTMLImageElement>;
+type IconProps = ComponentProps<"img">;
 
-function Icon({ ...props }: IconProps) {
+function Icon(props: IconProps) {
     return (
         <img className="h-6 w-6" {...props} />
     );

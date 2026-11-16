@@ -1,4 +1,5 @@
-import { PropsWithChildren, createContext, useContext } from "react";
+import { createContext, useContext } from "react";
+import type { PropsWithChildren } from "react";
 import LinkText from "../ui/LinkText";
 
 type ProjectCardContext = {

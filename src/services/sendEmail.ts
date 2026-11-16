@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import { createTemplateParams } from "@/utils/emailJs";
 
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -21,8 +21,14 @@ async function sendEmail(formData: FormDataType, token: string) {
             code: response.status,
             message: response.text,
         };
-    } catch (error: any) {
-        console.log(error);
+    } catch (error: unknown) {
+        if (error instanceof EmailJSResponseStatus) {
+            return {
+                code: error.status,
+                message: error.text,
+            };
+        }
+        throw error;
     }
 }
 
