@@ -1,18 +1,18 @@
-import { ContactMe } from "@/components/ContactMe";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
+import ContactMe from "@/components/sections/ContactMe/ContactMe";
+import Footer from "@/components/sections/Footer";
+import { Header } from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
+// import { Projects } from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
 
 function Home() {
     return (
-        <div className="bg-lightBackground dark:bg-darkBackground">
+        <div className="min-h-screen bg-background text-foreground">
             <Header />
             <main>
                 <Hero />
                 <Skills />
-                <Projects />
+                {/* <Projects /> */}
                 <ContactMe />
             </main>
             <Footer />

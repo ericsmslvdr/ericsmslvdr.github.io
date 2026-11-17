@@ -1,0 +1,20 @@
+export const contactContent = {
+    title: "Get in touch",
+    description: "Have a question or want to work together? Send me a message.",
+    otherWaysTitle: "Other ways to connect",
+    form: {
+        nameLabel: "Name:",
+        namePlaceholder: "Your name here",
+        emailLabel: "Email:",
+        emailPlaceholder: "your@email.com",
+        messageLabel: "Message:",
+        messagePlaceholder: "What's on your mind today?",
+        privacyPrefix: "This site is protected by reCAPTCHA and the Google",
+        privacyLabel: "Privacy Policy",
+        termsJoiner: "and",
+        termsLabel: "Terms of Service",
+        privacySuffix: "apply.",
+        submitLabel: "Send message",
+        sendingLabel: "Sending…",
+    },
+};

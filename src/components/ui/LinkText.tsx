@@ -9,12 +9,12 @@ type LinkTextProps = {
 
 function LinkText({ text, textClassName, iconClassName, ...props }: LinkTextProps) {
     const textClassNameMerged = twJoin(
-        "truncate group-hover:text-lightLink dark:group-hover:text-darkLink",
+        "truncate transition-colors group-hover:text-blue-500 dark:group-hover:text-blue-400",
         textClassName
     );
 
     const iconClassNameMerged = twMerge(
-        "h-4 w-4 ml-1 fill-lightSecondaryText dark:fill-darkSecondaryText group-hover:fill-lightLink dark:group-hover:fill-darkLink duration-0",
+        "ml-1 size-4 fill-muted-foreground transition-colors group-hover:fill-blue-500 dark:group-hover:fill-blue-400",
         iconClassName
     );
 

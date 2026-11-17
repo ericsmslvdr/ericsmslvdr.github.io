@@ -1,104 +1,33 @@
-import html from "@/assets/icons/technologies/html5-icon.svg";
-import css from "@/assets/icons/technologies/css3-icon.svg";
-import js from "@/assets/icons/technologies/javascript-icon.svg";
-import react from "@/assets/icons/technologies/react-icon.svg";
-import nodeJs from "@/assets/icons/technologies/nodejs-icon.svg";
-import ts from "@/assets/icons/technologies/typescript-icon.svg";
-import php from "@/assets/icons/technologies/php-icon.svg";
+import aws from "@/assets/icons/technologies/aws-icon.svg";
+import digitalOcean from "@/assets/icons/technologies/digitalocean-icon.svg";
+import git from "@/assets/icons/technologies/git-icon.svg";
+import gitLab from "@/assets/icons/technologies/gitlab-icon.svg";
+import docker from "@/assets/icons/technologies/docker-icon.svg";
 import laravel from "@/assets/icons/technologies/laravel-icon.svg";
 import mysql from "@/assets/icons/technologies/mysql-icon.svg";
-import mongodb from "@/assets/icons/technologies/mongodb-icon.svg";
-import tailwindCSS from "@/assets/icons/technologies/tailwindcss-icon.svg";
-import sass from "@/assets/icons/technologies/sass-icon.svg";
-import prisma from "@/assets/icons/technologies/prisma-icon.svg";
-import firebase from "@/assets/icons/technologies/firebase-icon.svg";
-import flutter from "@/assets/icons/technologies/flutter-icon.svg";
+import nginx from "@/assets/icons/technologies/nginx-icon.svg";
+import php from "@/assets/icons/technologies/php-icon.svg";
+import portainer from "@/assets/icons/technologies/portainer-icon.svg";
 import postman from "@/assets/icons/technologies/postman-icon.svg";
+import react from "@/assets/icons/technologies/react-icon.svg";
+import ubuntu from "@/assets/icons/technologies/ubuntu-icon.svg";
+import traefik from "@/assets/icons/technologies/traefik-icon.svg";
+import vue from "@/assets/icons/technologies/vue-icon.svg";
 
 export const technologies = [
-    {
-        icon: html,
-        alt: "HTML icon",
-        name: "HTML",
-    },
-    {
-        icon: css,
-        alt: "CSS icon",
-        name: "CSS",
-    },
-    {
-        icon: js,
-        alt: "JavaScript icon",
-        name: "JavaScript",
-    },
-    {
-        icon: react,
-        alt: "React icon",
-        name: "React",
-    },
-    {
-        icon: nodeJs,
-        alt: "Node.js icon",
-        name: "Node.js",
-    },
-    {
-        icon: ts,
-        alt: "TypeScript icon",
-        name: "TypeScript",
-    },
-    {
-        icon: php,
-        alt: "PHP icon",
-        name: "PHP",
-    },
-    {
-        icon: laravel,
-        alt: "Laravel icon",
-        name: "Laravel",
-    },
-    {
-        icon: laravel,
-        alt: "Laravel icon",
-        name: "Laravel",
-    },
-    {
-        icon: mysql,
-        alt: "MySQL icon",
-        name: "MySQL",
-    },
-    {
-        icon: mongodb,
-        alt: "MongoDB icon",
-        name: "MongoDB",
-    },
-    {
-        icon: tailwindCSS,
-        alt: "TailwindCSS icon",
-        name: "TailwindCSS",
-    },
-    {
-        icon: sass,
-        alt: "SASS icon",
-        name: "SASS",
-    },
-    {
-        icon: prisma,
-        alt: "Prisma ORM icon",
-        name: "Prisma ORM",
-    },
-    {
-        icon: firebase,
-        alt: "Firebase icon",
-        name: "Firebase",
-    },
-    {
-        icon: flutter,
-        alt: "Flutter icon",
-        name: "Flutter",
-    },
-    {
-        icon: postman,
-        alt: "Postman icon",
-        name: "Postman",
-    }
+    { name: "AWS", icon: aws, alt: "AWS icon" },
+    { name: "Laravel", icon: laravel, alt: "Laravel icon" },
+    { name: "PHP", icon: php, alt: "PHP icon" },
+    { name: "DigitalOcean", icon: digitalOcean, alt: "DigitalOcean icon" },
+    { name: "Docker", icon: docker, alt: "Docker icon" },
+    { name: "Vue", icon: vue, alt: "Vue icon" },
+    { name: "React", icon: react, alt: "React icon" },
+    { name: "MySQL", icon: mysql, alt: "MySQL icon" },
+    { name: "Postman", icon: postman, alt: "Postman icon" },
+    { name: "Portainer", icon: portainer, alt: "Portainer icon" },
+    { name: "Git", icon: git, alt: "Git icon" },
+    { name: "GitLab", icon: gitLab, alt: "GitLab icon" },
+    { name: "Linux / Ubuntu", icon: ubuntu, alt: "Ubuntu icon" },
+    { name: "Nginx", icon: nginx, alt: "Nginx icon" },
+    { name: "Traefik", icon: traefik, alt: "Traefik icon" },
 ];

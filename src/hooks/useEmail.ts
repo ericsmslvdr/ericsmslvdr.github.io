@@ -17,6 +17,13 @@ function useEmail() {
                 code: response?.code,
                 message: response?.message,
             });
+            if (response?.code !== 200) {
+                setError(response?.message ?? "Unable to send email.");
+                return false;
+            }
+
+            setError("");
+            return true;
         } catch (error: unknown) {
             const message = error instanceof Error ? error.message : "Unable to send email.";
             setError(message);
@@ -24,6 +31,7 @@ function useEmail() {
                 code: undefined,
                 message,
             });
+            return false;
         } finally {
             setLoading(false);
         }
